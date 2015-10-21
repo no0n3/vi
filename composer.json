@@ -1,0 +1,19 @@
+{
+    "name": "vi",
+    "description": "Vi PHP Framework",
+    "keywords": [
+        "vi",
+        "framework"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Velizar Ivanov",
+            "email": "zivanof@gmail.com",
+            "role": "Core framework developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
