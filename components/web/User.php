@@ -29,8 +29,8 @@ class User {
     }
 
     public function login($email, $password) {
-        echo $this->identityClass;
-        exit;
+//        echo $this->identityClass;
+//        exit;
         if ($this->isLogged()) {
             return true;
         }
