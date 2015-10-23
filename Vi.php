@@ -7,7 +7,6 @@ class Vi {
     public static $app;
 
     public static function autoload($className) {
-        global $params;
         $className = str_replace('\\', '/', $className);
         include __DIR__ . "/$className.php";
     }
