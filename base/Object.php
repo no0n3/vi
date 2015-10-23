@@ -25,7 +25,7 @@ class Object {
     }
 
     public function getSimpleClassName() {
-        return \components\helpers\StringHelper::slugify(
+        return \helpers\StringHelper::slugify(
             $this->getClassName(false)
         );
     }

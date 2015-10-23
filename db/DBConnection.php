@@ -1,5 +1,5 @@
 <?php
-namespace components\db;
+namespace db;
 
 /**
  * @author Velizar Ivanov <zivanof@gmail.com>

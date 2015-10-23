@@ -1,5 +1,5 @@
 <?php
-namespace components\web;
+namespace web;
 
 use Vi;
 
@@ -28,7 +28,7 @@ abstract class Controller extends \base\Object {
     public $responseType = 'text\html';
 
     function __construct($id, $actionId) {
-        $this->view = new \components\web\View($this);
+        $this->view = new \web\View($this);
         $this->id = $id;
     }
 

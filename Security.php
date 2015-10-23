@@ -1,5 +1,4 @@
 <?php
-namespace components;
 
 /**
  * @author Velizar Ivanov <zivanof@gmail.com>

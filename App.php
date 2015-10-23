@@ -1,15 +1,15 @@
 <?php
 
 use Vi;
-use components\web\Request;
-use components\web\Response;
-use components\web\Session;
-use components\Security;
-use components\exceptions\ForbiddenException;
-use components\exceptions\WrongMethodException;
-use components\exceptions\BadRequestException;
-use components\exceptions\NotFoundException;
-use components\web\Controller;
+use web\Request;
+use web\Response;
+use web\Session;
+use Security;
+use exceptions\ForbiddenException;
+use exceptions\WrongMethodException;
+use exceptions\BadRequestException;
+use exceptions\NotFoundException;
+use web\Controller;
 
 /**
  * @author Velizar Ivanov <zivanof@gmail.com>
@@ -40,6 +40,10 @@ class App extends \base\Object {
                 }
             }
 
+            if ('user' === $name) {
+                $this->$name->setLoginData();
+            }
+
             return $this->$name;
         } else if (isset($this->components[$name])) {
             if (!isset($comps[$name])) {
@@ -63,7 +67,7 @@ class App extends \base\Object {
         return self::$inst;
     }
 
-    public static function run($config = [], $isConsoleApp = false) {
+    public static function run($config = [], $route = null, $isConsoleApp = false) {
         static $inst = null;
         if (null === $inst) {
             $inst = new self($isConsoleApp);
@@ -90,7 +94,7 @@ class App extends \base\Object {
 
         if (!$this->isConsoleApp) {
             session_start();
-            $this->user = new \components\web\User();
+            $this->user = new \web\User();
         }
 
         $this->request = Request::getInstance();
@@ -123,7 +127,7 @@ HTML;
 //                }
 //            }
 
-            throw new \components\exceptions\ErrorException();
+            throw new \exceptions\ErrorException();
         });
 
         set_exception_handler(function($e) {
@@ -252,7 +256,7 @@ HTML;
 
         if ($this->controller->responseType === 'text\html') {
             if ($view) {
-                $layout = null === $this->controller->layout ? \components\web\Controller::DEFAULT_LAYOUT : $this->controller->layout;
+                $layout = null === $this->controller->layout ? \web\Controller::DEFAULT_LAYOUT : $this->controller->layout;
 
                 echo $this->controller->view->renderFile(
                     Vi::$app->params['sitePath'] . "/views/layouts/$layout.php",

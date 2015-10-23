@@ -1,5 +1,5 @@
 <?php
-namespace components\helpers;
+namespace helpers;
 
 class ImageHelper {
     

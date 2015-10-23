@@ -1,5 +1,5 @@
 <?php
-namespace components\web\widgets;
+namespace web\widgets;
 
 class Form extends \base\Object {
 
@@ -25,9 +25,9 @@ TEMPLATE;
 
     public static function widget($data = []) {
         $form = new static();
-        
+
         $form->id = isset($data['id']) ? $data['id'] : '-';
-$form->method = isset($data['method']) ? $data['method'] : 'post';
+        $form->method = isset($data['method']) ? $data['method'] : 'post';
         ob_start();
 
         
@@ -82,7 +82,7 @@ $form->method = isset($data['method']) ? $data['method'] : 'post';
         }
 
         if (!isset($attrs['id'])) {
-            $inputId = $model->getSimpleClassName() . '-' . \components\helpers\StringHelper::slugify($objProp);
+            $inputId = $model->getSimpleClassName() . '-' . \helpers\StringHelper::slugify($objProp);
         } else {
             $inputId = $attrs['id'];
         }
@@ -154,7 +154,7 @@ JS;
         if ('post' === strtolower($this->method) && isset($_SESSION['_csrf'])) {
             echo sprintf('<input type="hidden" name="%s" value="%s">',
                 '_csrf',
-                \components\Security::hash($_SESSION['_csrf'])
+                \Security::hash($_SESSION['_csrf'])
             );
         }
 

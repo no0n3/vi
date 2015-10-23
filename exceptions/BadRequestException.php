@@ -1,5 +1,5 @@
 <?php
-namespace components\exceptions;
+namespace exceptions;
 
 class BadRequestException extends \Exception {
 

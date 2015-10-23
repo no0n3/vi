@@ -1,5 +1,5 @@
 <?php
-namespace components\exceptions;
+namespace exceptions;
 
 class ForbiddenException extends \Exception {
 

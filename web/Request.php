@@ -1,5 +1,5 @@
 <?php
-namespace components\web;
+namespace web;
 
 /**
  * @author Velizar Ivanov <zivanof@gmail.com>

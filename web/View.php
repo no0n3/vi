@@ -1,5 +1,5 @@
 <?php
-namespace components\web;
+namespace web;
 
 use Vi;
 

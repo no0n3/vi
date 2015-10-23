@@ -1,5 +1,5 @@
 <?php
-namespace components\db;
+namespace db;
 
 class Query {
 

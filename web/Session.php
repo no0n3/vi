@@ -1,5 +1,5 @@
 <?php
-namespace components\web;
+namespace web;
 
 /**
  * @author Velizar Ivanov <zivanof@gmail.com>
@@ -21,7 +21,7 @@ class Session {
     }
 
     public function get($name = null) {
-        return null === $name ? ($_SESSION) : (isset($_SESSION[$name]) ? $_SESSION[$name] : null);
+        return null === $name ? $_SESSION : (isset($_SESSION[$name]) ? $_SESSION[$name] : null);
     }
 
     public function set($name, $value) {

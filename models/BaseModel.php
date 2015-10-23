@@ -1,7 +1,7 @@
 <?php
 namespace models;
 
-use components\helpers\ImageHelper;
+use helpers\ImageHelper;
 
 abstract class BaseModel extends \base\Object {
 
@@ -65,7 +65,7 @@ abstract class BaseModel extends \base\Object {
         return true;
     }
 
-    private function validateProperty($prop, $rules) {
+    public function validateProperty($prop, $rules) {
         if (empty($rules)) {
             return true;
         } else if (!$this->hasProperty($prop)) {

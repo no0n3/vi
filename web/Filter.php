@@ -1,12 +1,12 @@
 <?php
-namespace components\web;
+namespace web;
 
 /**
  * @author Velizar Ivanov <zivanof@gmail.com>
  */
 abstract class Filter {
 
-    public function beforeAction($actionId) {
+    public function beforeAction($actionId = null) {
         return true;
     }
 
