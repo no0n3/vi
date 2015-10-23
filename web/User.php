@@ -32,6 +32,10 @@ class User {
         }
     }
 
+    /**
+     * Checks if a user is logged in the current session.
+     * @return boolean True if the user is logged, false otherwise.
+     */
     public function isLogged() {
         return !empty(\Vi::$app->session->get($this->identityName));
     }
@@ -121,8 +125,8 @@ class User {
                 $loggedOut = false;
             }
 
-            session_destroy();
             unset($_SESSION);
+            session_destroy(); 
 
             return $loggedOut;
         }
