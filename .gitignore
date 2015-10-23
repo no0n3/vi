@@ -11,3 +11,6 @@ nbproject
 
 composer.lock
 composer.phar
+
+/controllers
+/views
